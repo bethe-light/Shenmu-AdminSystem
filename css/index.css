@@ -92,6 +92,13 @@ a:hover {color: #00F}	/* 鼠标移动到链接上 */
 .col-1, .col-2, .col-3, .col-4 {
     text-align: center;
  }
+.row {
+    margin: 10px 0;
+}
+.view {
+    text-decoration: none;
+    color: #3979B7;
+}
 .pagination {
     position: absolute;
     bottom: 0;
