@@ -14,11 +14,17 @@ function renderData(data) {
     document.getElementById("author-name").value = data.author;
     document.getElementById("label").value = data.tags;
     document.getElementById("essay-title").value = data.title;
-    ue.innerText = data.content;
+    UE.getEditor('editor').setContent(data.content, true);
 }
 
 //获取文章详情
 $(function(){
+    $(function () {
+        if(!localStorage.getItem('verification')){
+            alert("登录缓存已失效，即将转入登录界面！");
+            window.location.href = 'login.html';
+        }
+    });
     $.ajax({
         type: 'GET',
         url: baseURL + checkDetails + id,

@@ -1,3 +1,9 @@
+$(function () {
+    if(!localStorage.getItem('verification')){
+        alert("登录缓存已失效，即将转入登录界面！");
+        window.location.href = 'login.html';
+    }
+});
 
 function routing() {
     window.location.href = 'update_information.html';
@@ -46,6 +52,7 @@ function ajaxRequest() {
         success: function (res,status) {
             let data = res.data;
             let inf = ``;
+           ;
             if(res.status === 0){
                 sumPages = res.message;
                 $('.essay-list').empty(); //清空.essay-list 内所有内容
@@ -58,7 +65,7 @@ function ajaxRequest() {
                                 <span class="inf-title">&raquo; ${title[i]}</span>
                             </div>
                             <div class="col-sm-2 col-md-2 col-2">
-                                <span class="inf-title" >${author[i]}</span>
+                                <span class="inf-title" ><b>${author[i]}</b></span>
                             </div>
                             <div class="col-sm-3 col-md-3 col-3" >
                                 <span class="inf-title" >${time[i]}</span>
@@ -72,6 +79,7 @@ function ajaxRequest() {
                     inf += tempInf;
                 }
                 $('.essay-list').append(inf);
+                document.getElementById("page").innerText = pageNum + '';
             }
         }
     })
@@ -100,7 +108,7 @@ function menuBtn1(which) {
 }
 function prev() {
     if(pageNum === 1){
-        alert("已到达首页！");
+        // alert("已到达首页！");
         return false;
     }
     else {
@@ -114,7 +122,7 @@ function next() {
         ajaxRequest();
     }
     else {
-        alert("已到达尾页");
+        // alert("已到达尾页");
         return false;
     }
 }

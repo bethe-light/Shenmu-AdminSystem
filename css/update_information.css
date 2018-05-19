@@ -76,8 +76,12 @@ td {
 .dropdown-menu {
     background-color: #DDDDDD;
 }
+a.logo {
+    text-decoration: none;
+}
 .inf-class , .author-name, .label  {
     width: 150px;
+
 }
 
 .row1-col2, .row1-col4, .row1-col6, .row1-col2, .row1-col4, .row2-col6 {
@@ -103,6 +107,7 @@ td {
 .essay-title{
     margin: 0 12px;
     width: 70%;
+    /*border-radius: 3px;*/
 }
 .essay-content {
     position: relative;
@@ -116,4 +121,33 @@ td {
 .notice {
     position: relative;
     left: -5%;
+    width: 60%;
+}
+
+
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
 }
